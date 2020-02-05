@@ -1,0 +1,67 @@
+<div class="container">
+                
+    <div class="card bg-light mb-3 justify-content-center">
+        <h5 class="card-header justify-content-center">Listado de Grupos</h5>
+        <div class="card-body">
+       
+
+        <!--Botón crear grupo-->
+        <div class="my-2new text-left">
+            <button mat-button 
+                    matTooltip="crear grupo"
+                    mat-raised-button [style.background-color]="'#0aeba5'"
+                    [routerLink]="['/grupos/form']">
+                Crear Grupo
+              </button>
+        </div>
+
+        <!--Mensaje si hay datos o no-->
+        <div *ngIf="grupos?.length == 0" class="alert alert-info">
+            ¡No hay Registros en la Base de Datos!
+        </div>
+
+        <!--Tabla-->
+        <table class="table table-bordered table-striped" *ngIf="grupos?.length>0">
+
+            <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Disco</th>
+                    <th>Fecha</th>
+                    <th>Estilo Musical</th>
+                    <th>
+                        Editar
+                      </th>
+                      <th>Eliminar</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let grupo of grupos">
+                    <td >{{grupo.id}}</td>
+                    <td>{{grupo.nombre}}</td>
+                    <td>{{grupo.disco}}</td>            
+                    <td>{{grupo.fecha}}</td>
+                    <td>{{grupo.categoria.nombre}}</td>
+                    <td class="anchotabla">
+                        <button mat-button 
+                                matTooltip="Edit grupo" 
+                                [routerLink]="['/grupos/form', grupo.id]">
+                                
+                                <mat-icon>editar</mat-icon>
+                        </button>
+                      </td>
+                      <td class="anchotabla">
+                        <button mat-button 
+                                matTooltip="Delete grupo" 
+                                (click)='delete(grupo)' >
+                                <mat-icon>delete</mat-icon>
+                        </button>
+                      </td>
+                </tr>
+            </tbody>
+        </table>
+        
+        </div>
+    </div>
+</div>

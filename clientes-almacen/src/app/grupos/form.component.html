@@ -1,0 +1,69 @@
+<main>
+  <mat-card>
+    <form >
+
+          <!--nombre row-->            
+            <mat-form-field>
+              <input matInput 
+                    required 
+                    placeholder="Nombre"  
+                    [(ngModel)]="grupo.nombre" 
+                    name="nombre">
+            </mat-form-field>
+
+
+            <!--disco row-->
+            <mat-form-field>
+              <input matInput 
+                    required 
+                    placeholder="Disco"  
+                    [(ngModel)]="grupo.disco" 
+                    name="disco">
+            </mat-form-field>
+
+            <!--fecha row-->
+            <mat-form-field>
+              <input matInput 
+                    required 
+                    placeholder="Fecha"  
+                    [(ngModel)]="grupo.fecha" 
+                    name="fecha">
+            </mat-form-field>
+
+            <!--Categoria row-->
+            <mat-form-field>
+              <mat-label>Categorias</mat-label>
+              <mat-select [compareWith]="compararCategoria"
+                          [(ngModel)]="grupo.categoria" 
+                          name="categoria">
+                <mat-option *ngFor="let categoria of categorias" 
+                            [value]="categoria">
+                            {{categoria.nombre}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+            <!--boton crear row-->
+            <button mat-button mat-flat-button color="green" 
+                    style="display:block; width:100%;" 
+                    (click)='create()' 
+                    *ngIf="!grupo.id else elseBlock">Crear
+              
+            </button>
+
+            <!--boton editar row-->
+            <ng-template #elseBlock>
+                <button 
+                        mat-button mat-flat-button color="green" 
+                        style="display:block; width:100%;" 
+                        (click)='update()'>
+                        Editar              
+                </button>
+            </ng-template>
+      </form>
+  </mat-card>
+</main>
+
+  
+     
