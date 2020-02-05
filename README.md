@@ -1,12 +1,10 @@
-# Personal Portfolio with Angular
-It´s a tiny example of my works create with Angular 8
+# API REST: Almacén Discos CRUD
+Pequeño CRUD para almacenar discos realizado en Java Springboot/angular8/Mysql
 
 
+The application is built using Angular 8 with Angular Material and TypeScript on the frontend, Java Springboot and Mysql on the backend.
 
-
-# Images of the Portfolio
-![](showcase/showcas_portfolio_img1.gif)
-
+![](showcase/apirest_java_spring_angular.gif)
 
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.3.13.
