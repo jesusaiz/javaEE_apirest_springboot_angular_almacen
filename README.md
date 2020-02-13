@@ -1,8 +1,9 @@
 # API REST: Almacén Discos CRUD
-Pequeño CRUD para almacenar discos realizado en Java Springboot/angular8/Mysql
+Pequeño CRUD para almacenar discos realizado en Java Springboot/angular8/Mysql/Hibernate
 
 # SI quieres ver la aplicación funcionando HAZ CLICK en el siguiente LINK:
 https://almacen-angular-app.firebaseapp.com
+
 
 
 The application is built using Angular 8 with Angular Material and TypeScript on the frontend, Java Springboot and Mysql on the backend.
